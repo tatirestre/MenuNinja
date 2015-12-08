@@ -1,0 +1,35 @@
+
+
+<p>
+  <strong>Email:</strong>
+  <%= @app.email %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @app.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @app.first_name %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @app.resume %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @app.job.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @app.user.email %>
+  has created <%= @app.user.jobs.not_internal.count %> external jobs!
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

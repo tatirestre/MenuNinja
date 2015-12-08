@@ -1,0 +1,39 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @job.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @job.city %>
+</p>
+
+<p>
+  <strong>Compensation:</strong>
+  <%= @job.compensation %>
+</p>
+
+<p>
+  <strong>Is internal:</strong>
+  <%= @job.is_internal %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @job.user.email %>
+  has created <%= @job.user.jobs.not_internal.count %> external jobs so far! 
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

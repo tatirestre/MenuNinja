@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Last name</th>
+      <th>First name</th>
+      <th>Resume</th>
+      <th>Job</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.email %></td>
+        <td><%= app.last_name %></td>
+        <td><%= app.first_name %></td>
+        <td><%= app.resume %></td>
+        <td><%= app.job.title %></td>
+        <td><%= app.user.email %></td>
+        <td><%= link_to 'Show', app %></td>
+        <td><%= link_to 'Edit', edit_app_path(app) %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New App', new_app_path %>
